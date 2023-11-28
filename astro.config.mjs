@@ -6,8 +6,12 @@ import compress from 'astro-compress'
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  integrations: [mdx(), tailwind({
-    applyBaseStyles: false,
-  }), compress()],
+  integrations: [
+    mdx(), 
+    tailwind({
+      applyBaseStyles: false,
+    }), 
+    //compress(),
+  ],
   site: 'https://zkLocus.dev',
 })
