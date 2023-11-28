@@ -1,0 +1,198 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
+import Feature from '../components/Feature.astro'
+import Counter from '../components/Counter.astro'
+import ContentMedia from '../components/ContentMedia.astro'
+---
+
+
+<script>
+  // Find the button and the extra features container in the DOM
+  const toggleButton = document.getElementById('toggleButton');
+  const extraFeatures = document.getElementById('extraFeatures');
+  
+  // Define the click event listener to toggle the features' visibility
+  toggleButton.addEventListener('click', () => {
+    extraFeatures.classList.toggle('hidden');
+    extraFeatures.style.height = extraFeatures.classList.contains('hidden') ? '0' : `${extraFeatures.scrollHeight}px`;
+    toggleButton.textContent = extraFeatures.classList.contains('hidden') ? 'And Much More...' : 'Show Less';
+  });
+</script>
+
+
+<DefaultLayout title="Home">
+  <Hero />
+  <section class="my-64">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Features</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Feature icon="mdi:map-marker-check" title="Geolocation Authentication With Full Privacy">
+          Prove your whereabouts within specific regions, within a specific time interval, without exposing your exact
+          coordinates or timestamp with zkLocus.
+        </Feature>
+
+        <Feature icon="mdi:lock-check" title="Inherent Zero-Knowledge Security">
+          zkLocus isn't just using zero-knowledge technology; it is zero-knowledge from the ground up. Every circuit is
+          designed to ensure privacy and security are not just features, but fundamental attributes of the application.
+        </Feature>
+        <Feature icon="mdi:alphabet-m-circle-outline" title="Native on the Mina Blockchain">
+          zkLocus was born on, and is natively implemented in O1JS on the Mina Blockchain. It can be easily integrated
+          into any zero-knowledge application.
+        </Feature>
+
+        <Feature icon="mdi:earth" title="Blockchain-Agnostic">
+          zkLocus generates zkSNARKs proofs which can be used on any blockchain, such as Ethereum and Cardano. It's fully EVM-compatbile. This
+          flexibility, rooted in zkLocus' vision, ensures wide applicability for decentralized systems.
+        </Feature>
+
+        <Feature icon="mdi:finance" title="DeFi Geolocation Programmability">
+          zkLocus brings geolocation programmability to DeFi, enabling the embedding of secure, private location data
+          into NFTs, ERC-20 tokens, and other digital assets.
+        </Feature>
+
+        <Feature icon="mdi:map-marker-check" title="Authenticated Geolocation Source">
+          Wether the zkLocus, the source of geolocation data is fully authenticated through zero-knowledge proofs,
+          ensuring complete privacy of the underlying location details, while making its source fully transparent.
+        </Feature>
+
+        <Feature icon="mdi:map-marker-radius" title="Selective Coordinate Sharing">
+          While zkLocus champions privacy, it also provides the option to share exact coordinates securely when
+          transparency is required. The same is true for timestamps. d
+        </Feature>
+        <Feature icon="mdi:cellphone" title="Runs On Mobile">
+            Geolocation proofs can be generated on any mobile device, including directly on the web browser app, such as Chrome, Safari, and Firefox.
+          </Feature>
+        
+          <Feature icon="mdi:shape-plus" title="Flexible Geographical Assertions">
+          Craft assertions about being within or outside specific areas with zkLocus. Define arbitrary polygons or merge
+          areas to create custom geofences for nuanced location proofs.
+        </Feature> 
+      </div>
+<div id="extraFeatures" class="hidden grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <Feature icon="mdi:lock" title="Constant-Size Proofs">
+         zkLocus proofs are always a compact and constant size, regardless of the number of assertions. This is made possible by the Kimchi proof system, integrated with the Pickles recursive system. You can compress an infinite amount of proofs into a signle, constand size proof. This enables zkLocus to operate on a miryad of devices and environments, including devices with constrained resources.
+      </Feature>
+
+        <Feature icon="mdi:lock" title="Data Never Leaves Your Device">
+            zkLocus is designed to ensure that your data never leaves your device. All proofs are generated and verified locally
+            on your device, ensuring that your data is never exposed to third parties. Your coordinates and timestamps are known
+            only to you.
+          </Feature>
+          
+          <Feature icon="mdi:recycle-variant" title="Recursive zkSNARKs">
+            Recursive zkSNARKs are at the core of zkLocus' proof design. They allow the infinite compression of zkLocus proofs, by offering an organic rollup mechanism. This ensures that zkLocus proofs are always of small size, regardless of the number of coordinates, polygons, and timestamps they contain.
+          </Feature>
+
+          <Feature icon="mdi:tree-outline" title="Private Location History">
+            Share your full location history without revealing any of your coordinates. Powered by Merkle Trees to
+            cryptographically store and verify location history, zkLocus enables for secure and private real-time and
+            historical location sharing.
+          </Feature>
+
+          <Feature icon="mdi:database-import-outline" title="Multiple Data Sources">
+            zkLocus supports integrating a variety of data sources, ensuring comprehensive and robust geolocation
+            proofs.
+          </Feature> 
+
+      <Feature icon="mdi:timer-sand" title="Authenticated Timestamp Source">
+          Timestamps are more than just data; they are commitments. zkLocus provides the tools to authenticate the
+          source of timestamp data, essential for creating reliable time-sensitive proofs.
+        </Feature>
+
+          <Feature icon="mdi:web" title="Runs On The Browser">
+            zkLocus is written in TypeScript/JavaScript, as such it be used direclty in the web browser, allowing for private geolocation proofs to be generated on the user's device and verified on either client side or the server-side. You don't need to run a node or use blockchain to use zkLocus.
+          </Feature>
+
+          <Feature icon="mdi:language-typescript" title="TypeScript and JavaScript API">
+            zkLocus runs anywhere where JavaScript does. It's written in TypeScript and provides a simple and intuitive API for generating and verifying geolocation proofs. Designed for developers by developers.
+          </Feature>
+
+          
+          <Feature icon="mdi:block-chain" title="Off-Chain Capabilities">
+            zkLocus does not require a blockchain to function. A proof is a lightweight JSON object, which can be verified independently of the blockchain. In fact, anyone can verify the validity
+            of a proof. The proofs are of small size and can be verified seamlessly even on devices with limited resources, such as IoT.
+          </Feature>
+
+          <Feature icon="mdi:expand-all-outline" title="Flexible and Extensible">
+            zkLocus's recursive zkSNARKs design allows for the trivial integration and expansion a of zkLocus for custom needs. While zkLocus can be used as it is, its circuit architecture ensures it can be easlily integrated into an existing system, expanded with additional functionality, or customized to fit specific needs. 
+          </Feature> 
+
+          <Feature icon="mdi:gavel" title="Law-Abiding Technology">
+            zkLocus is at the forefront of bridging existing legal systems on-chain, by allowing for the creation of law-abiding computational systems. It enables for the generation of zero-knowledge legal evidence which can be used to govern the digital entities, both off and on-chain.
+          </Feature>
+
+          <Feature icon="mdi:ev-station" title="An Evolving Ecosystem">
+            zkLocus is an evolving platform with an actively expanding feature and applicability set. We are currently integrating with numerous applications and platforms in diversified fields. If you have an idea, a partnership, or an innovative application in mind, please reach us via email at <a href="mailto:contact@zklcous.dev">contact@zklocus.dev</a>
+          </Feature>
+        </div>
+
+      <div class="flex justify-center mt-8">
+        <button id="toggleButton" class="px-6 py-3 bg-purple-500 text-white font-semibold rounded hover:bg-purple-600 transition-colors">
+          And Much More...
+        </button>
+      </div>
+    </div>
+  
+  </section>
+
+  <ContentMedia imgSrc="/zkLocus_proof_generation.svg">
+    <h2>Generate A ZK Location Proof</h2>
+    <p class="text-2xl">
+      zkLocus offers an easy and ituitive API for generating zero-knowledge location proofs. In just a few lines of code, you can generate a proof that you are within a specific area, at a specific time, without revealing your exact coordinates or timestamp. ZKLocus proofs can be generated on any device, including the web browser, mobile devices, and server-side.
+    </p>
+  </ContentMedia>
+  <ContentMedia imgSrc="/zkLocus_proof_json.svg" reverseImg={true}>
+    <h2>ZK Loaction Proof as JSON</h2>
+    <p class="text-2xl">
+      zkLocus proofs are JSON objects, which can be easily verified on-chain or off-chain. Converting a zkLocus proof into a JSON object is as simple as calling the <code>.toJSON()</code>. You can easily a JSON object back into a zkLocus proof by calling the <code>.fromJSON()</code> method.
+    </p>
+  </ContentMedia>
+
+  <ContentMedia imgSrc="/zkLocus_proof_generation.svg">
+    <h2>Verify A ZK Location Proof</h2>
+    <p class="text-2xl">
+      Verifing a zkLocus proof is as simple as calling the <code>.verify()</code> method. You can verify a proof on-chain or off-chain. The underlying area assertions are exposed through the attributes of the object. zkLocus proofs can be verified on any device, including the web browser, mobile devices, and server-side.
+    </p>
+  </ContentMedia>
+ 
+  <!-- Counters to Include Later (Make Dynamic)
+
+  <section class="mb-32 mt-64">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Counters</h2>
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+        <Counter count="2" title="Stars" sub="On GitHub" />
+        <Counter count="10" title="Accessible" sub="Components" />
+        <Counter count="90+" title="Commits" sub="Merged" />
+        <Counter count="1" title="Months" sub="Since launch" />
+      </div>
+    </div> 
+  </div>
+  </section>
+
+
+  -->
+</DefaultLayout>
+
+<style>
+
+  /* Style for the toggle button */
+  #toggleButton {
+    /* Button styles to fit the existing design */
+  }
+
+  /* Animation for the extra features */
+  #extraFeatures {
+    /* Start with no height and hidden overflow for the animation */
+    height: 0;
+    overflow: hidden;
+    margin-top: 4rem;
+    transition: height 0.5s ease;
+  }
+
+  /* When not hidden, the height should be auto to accommodate any number of extra features */
+  #extraFeatures:not(.HIDDEN) {
+    height: auto;
+  }
+</style>

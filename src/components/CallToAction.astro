@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="call-to-action mt-24 mb-32 flex flex-col items-center gap-4 rounded-xl p-12 md:p-24 text-center">
+    <h2 class="text-3xl md:text-5xl">
+      <span>✨</span>
+      zkLocus<span class="hidden xl:inline">:</span>
+      <span class="inline xl:hidden">✨</span>
+      <br class="xl:hidden" />
+      A Growing Ecosystem
+      <span class="hidden xl:inline">✨</span>
+    </h2>
+
+    <p class="max-w-screen-md mx-auto">
+      As a dynamic and actively evolving platform, zkLocus invites innovation.
+      Join us in shaping the future of private geolocation services.
+      Have an idea or looking to collaborate? Reach out to us at
+    </p>
+    <span class="contact-wrap text-3xl">👉 <a class="contact-link" href="mailto:contact@zklocus.dev">contact@zklocus.dev</a> 👈</span>
+  </div>
+</div>
+
+<style lang="scss">
+  .call-to-action {
+    color: var(--neutral-900);
+    background-image: linear-gradient(40deg, var(--primary-100), var(--secondary-200));
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .call-to-action h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .call-to-action p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .call-to-action .contact-link {
+    display: inline-block; /* This ensures the link does not overlap the text above */
+    padding: 0.5rem 1rem;
+    color: var(--primary-500);
+    font-weight: bold;
+    border: 2px solid var(--primary-500);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: var(--neutral-100);
+      background-color: var(--primary-500);
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .call-to-action h2 {
+      white-space: normal;
+      text-align: center;
+      overflow: visible;
+      text-overflow: clip;
+    }
+
+
+    .call-to-action .h2-continuation {
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    .call-to-action p, .call-to-action .contact-wrap {
+      font-size: 0.9rem;
+    }
+  }
+</style>
