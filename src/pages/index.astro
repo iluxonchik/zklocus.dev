@@ -136,20 +136,21 @@ import ContentMedia from '../components/ContentMedia.astro'
   
   </section>
 
-  <ContentMedia imgSrc="/zkLocus_proof_generation.svg">
+  <ContentMedia imgSrc="/zkLocus-generate-proof-api-typescript.png" alt="Code showing how to generate a zkLocus proof in TypeScript and JavaScript.">
     <h2>Generate A ZK Location Proof</h2>
     <p class="text-2xl">
       zkLocus offers an easy and ituitive API for generating zero-knowledge location proofs. In just a few lines of code, you can generate a proof that you are within a specific area, at a specific time, without revealing your exact coordinates or timestamp. ZKLocus proofs can be generated on any device, including the web browser, mobile devices, and server-side.
     </p>
   </ContentMedia>
-  <ContentMedia imgSrc="/zkLocus_proof_json.svg" reverseImg={true}>
+
+  <ContentMedia imgSrc="/zkLocus-json-api-typescript.png" reverseImg={true} alt="Code showing how to convert a zkLocus location proof into JSON and load a zkLocus location proof from JSON in TypeScript and JavaScript.">
     <h2>ZK Loaction Proof as JSON</h2>
     <p class="text-2xl">
       zkLocus proofs are JSON objects, which can be easily verified on-chain or off-chain. Converting a zkLocus proof into a JSON object is as simple as calling the <code>.toJSON()</code>. You can easily a JSON object back into a zkLocus proof by calling the <code>.fromJSON()</code> method.
     </p>
   </ContentMedia>
 
-  <ContentMedia imgSrc="/zkLocus_proof_generation.svg">
+  <ContentMedia imgSrc="/zkLocus-verify-proof-api-typescript.png" alt="Code showing how to verify a zkLocus proof in TypeScript and JavaScript.">
     <h2>Verify A ZK Location Proof</h2>
     <p class="text-2xl">
       Verifing a zkLocus proof is as simple as calling the <code>.verify()</code> method. You can verify a proof on-chain or off-chain. The underlying area assertions are exposed through the attributes of the object. zkLocus proofs can be verified on any device, including the web browser, mobile devices, and server-side.
