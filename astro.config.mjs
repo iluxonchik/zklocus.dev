@@ -10,7 +10,7 @@ export default defineConfig({
     mdx(), 
     tailwind({
       applyBaseStyles: false,
-    }), 
+    }),
     //compress(),
   ],
   site: 'https://zkLocus.dev',

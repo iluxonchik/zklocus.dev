@@ -1,0 +1,59 @@
+---
+import { Icon } from 'astro-icon'
+
+const { src = '../zksafezones-mascot.png' } = Astro.props
+---
+
+<section class="hero my-24">
+  <div class="container">
+    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+      <div class="flex flex-col items-center gap-8 md:items-start">
+        <h1 class="text-center text-6xl md:text-left lg:text-8xl">
+          <slot>
+            <span class="text-gradient">zkSafeZones:</span> Civilian Protection in Conflict Areas
+          </slot>
+        </h1>
+      
+
+        <h3 class="flex flex-col items-center sm:flex-row sm:items-baseline gap-1">
+          <span class="mr-1">Using</span>
+          <span class="text-gradient">Zero-Knowledge</span>& Blockchain
+        </h3>
+
+
+        <div class="flex flex-col gap-3 min-[500px]:flex-row">
+          <a class="button has-icon" href="https://github.com/iluxonchik/zkLocus/" target="blank">
+            <Icon pack="ion" name="star-outline" />
+            Star on GitHub
+          </a>
+          <a
+            class="button has-icon color-secondary"
+            href="./whitepaper" target="blank"
+          >
+            <Icon pack="ion" name="bookmark-outline" />
+            Read the Whitepaper
+          </a>
+
+        </div>
+      </div>
+      <img class="hidden lg:block" src={src} alt="A vibrant, colorful illustration features the mascot of zkSafeZones, depicted as a friendly robot with a blue and black body. The robot has a large, round head with glowing blue eyes and a transparent visor. It holds an open book with a red cross symbol on it, symbolizing medical or humanitarian aid. Behind the robot, a large globe map indicates the global reach and impact of zkSafeZones. The background also includes icons of medical supplies and aid, emphasizing the project's focus on civilian protection and international humanitarian efforts." decoding="async" />
+    </div>
+    </div>
+
+</section>
+
+<style lang="scss">
+  .text-gradient {
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-500));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  :global(.darkmode .text-gradient) {
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
