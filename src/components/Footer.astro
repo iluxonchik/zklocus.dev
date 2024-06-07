@@ -1,11 +1,15 @@
 ---
 import CallToAction from './CallToAction.astro'
 
+const {
+  showCTA = true
+} = Astro.props;
+
 const currentYear = new Date().getFullYear()
 ---
 
 <footer>
-  <CallToAction />
+  {showCTA == true ? <CallToAction /> : ''}
   <section class="py-8">
     <div class="container">
       <p>

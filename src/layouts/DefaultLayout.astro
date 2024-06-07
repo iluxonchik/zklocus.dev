@@ -6,11 +6,13 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
 const {
-  title = 'zkLocus | On-Chain zk-SNARKs Private Geolocation',
-  description = 'Authenticated private geolocation for blockchain, mobile, and web, on or off-chain.',
+  title = 'zkLocus | Geolocation RWA for Web3',
+  title_override = null,
+  description = 'Authenticated private geolocation real-world asset (RWA) for blockchain, mobile, and web, on or off-chain.',
   url = 'https://zklocus.dev/',
-  image = '/zkLocus-landing-mascot.png',
+  image = 'zkLocus-landing-mascot.png',
   author = 'Illya Gerasymchuk',
+  showCTA = true,
 } = Astro.props
 
 const siteUrl: string | URL= Astro.site ? Astro.site : 'https://zklocus.dev/'
@@ -27,6 +29,7 @@ const siteUrl: string | URL= Astro.site ? Astro.site : 'https://zklocus.dev/'
 
     <SiteMeta
       title={title}
+      title_override={title_override}
       description={description.substring(0, 100)}
       url={siteUrl}
       image={image}
@@ -38,7 +41,7 @@ const siteUrl: string | URL= Astro.site ? Astro.site : 'https://zklocus.dev/'
     <main id="main-content">
       <slot />
     </main>
-    <Footer />
+   <Footer showCTA={showCTA} />
     <style lang="scss" is:global>
       // theme settings
       :root {
